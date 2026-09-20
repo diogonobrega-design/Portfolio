@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diogo Nóbrega — Design &amp; Motion Creative</title>
+  <meta name="description" content="Diogo Nóbrega — graphic design &amp; motion portfolio.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#work">Skip to work</a>
+
+  <div class="wrap">
+    <header class="site-header">
+      <ul class="nav">
+        <li><span class="chev">›</span> <a href="index.html">Portfolio</a></li>
+        <li><span class="chev">›</span> <a href="about.html">About me</a></li>
+        <li><span class="chev">›</span> <a href="assets/Diogo-Nobrega-CV.pdf" target="_blank" rel="noopener">Curriculum vitae</a></li>
+      </ul>
+    </header>
+
+    <section class="hero">
+      <h1>Diogo Nóbrega</h1>
+      <p class="tagline"><span class="chev">›</span> Design &amp; motion creative</p>
+    </section>
+
+    <section class="grid-section" id="work">
+      <div class="grid">
+        <a class="tile" href="aldi.html">
+          <img src="assets/work/cover-aldi.jpg" alt="ALDI Príncipe Real store-opening key visual" loading="lazy">
+          <span class="tile-label">ALDI — Príncipe Real <span class="chev">↗</span></span>
+        </a>
+        <a class="tile" href="estoril-open.html">
+          <img src="assets/work/cover-estoril.jpg" alt="Millennium Estoril Open — Decathlon Kuikma campaign key visual" loading="lazy">
+          <span class="tile-label">Decathlon — Estoril Open <span class="chev">↗</span></span>
+        </a>
+        <a class="tile" href="christina.html">
+          <img src="assets/work/cover-christina.jpg" alt="Cafés Christina — Romaria Nossa Senhora d'Agonia campaign" loading="lazy">
+          <span class="tile-label">Christina — Romaria d'Agonia <span class="chev">↗</span></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="brands">
+      <p class="brands-note">O meu arsenal de marcas</p>
+      <div class="marquee">
+        <div class="brand-track">
+          <img src="assets/brands/strip-1.png" alt="">
+          <img src="assets/brands/strip-2.png" alt="">
+          <img src="assets/brands/strip-1.png" alt="" aria-hidden="true">
+          <img src="assets/brands/strip-2.png" alt="" aria-hidden="true">
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <span>© <span id="year"></span> Diogo Nóbrega</span>
+      <a href="#top">↑ Top</a>
+    </footer>
+  </div>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

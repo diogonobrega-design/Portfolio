@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1100" viewBox="0 0 900 1100">
+  <rect width="900" height="1100" fill="#4b2bff"/>
+  <g fill="#16d1a0">
+    <circle cx="250" cy="580" r="170"/>
+    <rect x="430" y="640" width="360" height="360" rx="40" transform="rotate(24 610 560)"/>
+    <path d="M120 900 Q450 720 820 940 L820 1040 L120 1040 Z" opacity="0.9"/>
+  </g>
+  <text x="70" y="1000" font-family="Shantell Sans, Comic Sans MS, cursive" font-size="64" font-weight="800" fill="#16d1a0">Roast and Co.</text>
+</svg>

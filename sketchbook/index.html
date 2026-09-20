@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- EDIT ME: title + description -->
+  <title>Diogo Nóbrega — Multidisciplinary Designer · Graphic, 3D & Motion</title>
+  <meta name="description" content="Portfolio of Diogo Nóbrega — multidisciplinary designer: graphic design, 3D, motion, illustration and branding. Working with some of the biggest brands in the world." />
+
+  <meta property="og:title" content="Diogo Nóbrega — Multidisciplinary Designer" />
+  <meta property="og:description" content="Graphic design, 3D, motion, illustration and branding." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/og-image.png" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,400..700;1,400..700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#work" data-i18n="skip">Skip to work</a>
+
+  <div class="cursor" data-cursor aria-hidden="true"><span class="cursor-label"></span></div>
+
+  <button class="lang-toggle" data-lang-toggle type="button" aria-label="Switch to Portuguese">
+    <span data-lang-label>PT</span>
+  </button>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a href="#top" class="logo" aria-label="Home">Diogo<span class="logo-dot">.</span></a>
+
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+          <span class="nav-toggle-bar"></span><span class="sr-only">Menu</span>
+        </button>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#work" class="wiggle" data-i18n="nav.work">Work</a></li>
+          <li><a href="#about" class="wiggle" data-i18n="nav.about">About</a></li>
+          <li><a href="#contact" class="wiggle" data-i18n="nav.contact">Contact</a></li>
+          <li><a href="#contact" class="btn btn--pop btn--sm" data-magnetic data-i18n="cta.sayhi">Say hi</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ==================== HERO ==================== -->
+    <section class="chapter chapter--indigo hero" data-chapter="dark">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="tag reveal" data-i18n-html="hero.tag">Portfolio <span>’26</span></p>
+          <h1 class="hero-title">
+            <span class="reveal" data-i18n="hero.l1">Hello,</span>
+            <span class="reveal" data-i18n-html="hero.l2">I'm <em>Diogo</em></span>
+          </h1>
+          <p class="hero-do reveal">
+            <span data-i18n="hero.do">I do</span>
+            <span class="cycler" data-words="Graphic Design,3D,Motion,Illustration,Branding,& much more">Graphic Design</span>
+          </p>
+          <p class="hero-lede reveal" data-i18n="hero.lede">
+            Multidisciplinary designer based in Portugal — graphic design, 3D,
+            motion, illustration, branding and more. I build brands and images
+            that stick.
+          </p>
+          <div class="hero-actions reveal">
+            <a href="#work" class="btn btn--pop" data-magnetic data-i18n-html="hero.seework">See the work <span aria-hidden="true">→</span></a>
+            <a href="#contact" class="btn btn--ghost" data-magnetic data-i18n="cta.sayhi">Say hi</a>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             EDIT ME: hero stickers — decorative, draggable. Swap images.
+             ============================================================ -->
+        <div class="sticker-stack" data-drag-zone aria-hidden="true">
+          <figure class="sticker" data-drag style="left:1%;top:0;width:56%;--r:-8deg;z-index:1">
+            <span class="tape"></span><img src="assets/work/piece-01.svg" alt="" />
+          </figure>
+          <figure class="sticker" data-drag style="left:44%;top:16%;width:52%;--r:7deg;z-index:2">
+            <span class="tape"></span><img src="assets/work/piece-03.svg" alt="" />
+          </figure>
+          <figure class="sticker" data-drag style="left:8%;top:44%;width:50%;--r:4deg;z-index:3">
+            <span class="tape"></span><img src="assets/work/piece-05.svg" alt="" />
+          </figure>
+          <figure class="sticker" data-drag style="left:48%;top:56%;width:47%;--r:-6deg;z-index:4">
+            <span class="tape"></span><img src="assets/work/piece-07.svg" alt="" />
+          </figure>
+          <p class="scribble-note" data-i18n="hero.drag">drag us! →</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== BRANDS ==================== -->
+    <section class="brands" aria-label="Selected brands">
+      <p class="brands-note" data-i18n="brands.note">Working with some of the biggest brands in the world</p>
+      <!-- ============================================================
+           EDIT ME: two pre-laid-out logo sheets (assets/brands/strip-*.png).
+           Keep the two .brand-track blocks identical for a seamless loop.
+           ============================================================ -->
+      <div class="brand-marquee" aria-hidden="true">
+        <div class="brand-track">
+          <img src="assets/brands/strip-1.png" alt="" />
+          <img src="assets/brands/strip-2.png" alt="" />
+        </div>
+        <div class="brand-track" aria-hidden="true">
+          <img src="assets/brands/strip-1.png" alt="" />
+          <img src="assets/brands/strip-2.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <div class="tear" aria-hidden="true"></div>
+
+    <!-- ==================== WORK ==================== -->
+    <section id="work" class="chapter chapter--paper" data-chapter="light">
+      <div class="container">
+        <header class="chapter-head reveal">
+          <span class="chapter-num">01</span>
+          <h2 class="chapter-title" data-i18n-html="work.title">Selected <em>work</em></h2>
+        </header>
+
+        <div class="filters reveal" role="tablist" aria-label="Filter work by discipline">
+          <button class="filter is-active" data-filter="all" role="tab" aria-selected="true" data-i18n="filter.all">Everything</button>
+          <button class="filter" data-filter="3d" role="tab" aria-selected="false" data-i18n="filter.3d">3D</button>
+          <button class="filter" data-filter="illustration" role="tab" aria-selected="false" data-i18n="filter.illustration">Illustration</button>
+          <button class="filter" data-filter="graphic" role="tab" aria-selected="false" data-i18n="filter.graphic">Graphic design</button>
+        </div>
+
+        <!-- ============================================================
+             EDIT ME: one <article class="photo"> per project.
+             - data-category: 3d | illustration | graphic
+             - --r inline = its resting tilt
+             - swap assets/work/*.svg for real images; rewrite alt + caption
+             ============================================================ -->
+        <div class="board reveal" data-drag-zone>
+          <article class="photo" data-drag data-category="graphic" style="--r:-3deg">
+            <span class="tape"></span>
+            <a class="photo-media" href="estoril-open.html"><img src="assets/work/estoril-open/kv-instore.jpg" alt="Millennium Estoril Open campaign key visual" loading="lazy" /></a>
+            <figcaption class="photo-cap"><h3>Millennium Estoril Open</h3><p data-i18n="cap.eo">Campaign — 3D · Digital · Print</p></figcaption>
+          </article>
+          <article class="photo" data-drag data-category="illustration" style="--r:2.5deg">
+            <span class="tape"></span>
+            <a class="photo-media" href="#"><img src="assets/work/piece-02.svg" alt="Character illustration of a traveller on a ridge at dusk" loading="lazy" /></a>
+            <figcaption class="photo-cap"><h3>Ridge Walker</h3><p data-i18n="cap.2">Illustration — Editorial</p></figcaption>
+          </article>
+          <article class="photo" data-drag data-category="graphic" style="--r:-1.5deg">
+            <span class="tape"></span>
+            <a class="photo-media" href="#"><img src="assets/work/piece-03.svg" alt="Brand identity poster with a bold type lockup" loading="lazy" /></a>
+            <figcaption class="photo-cap"><h3>Núcleo Festival</h3><p data-i18n="cap.3">Graphic design — Identity</p></figcaption>
+          </article>
+          <article class="photo" data-drag data-category="3d" style="--r:3deg">
+            <span class="tape"></span>
+            <a class="photo-media" href="#"><img src="assets/work/piece-04.svg" alt="Low-poly environment diorama on a dark background" loading="lazy" /></a>
+            <figcaption class="photo-cap"><h3>Transit Diorama</h3><p>3D — Cinema 4D, Redshift</p></figcaption>
+          </article>
+          <article class="photo" data-drag data-category="illustration" style="--r:-2.5deg">
+            <span class="tape"></span>
+            <a class="photo-media" href="#"><img src="assets/work/piece-05.svg" alt="Series of icon-style spot illustrations" loading="lazy" /></a>
+            <figcaption class="photo-cap"><h3>Spot Series</h3><p data-i18n="cap.5">Illustration — Product</p></figcaption>
+          </article>
+          <article class="photo" data-drag data-category="graphic" style="--r:1.5deg">
+            <span class="tape"></span>
+            <a class="photo-media" href="#"><img src="assets/work/piece-06.svg" alt="Editorial layout spread with a visible grid" loading="lazy" /></a>
+            <figcaption class="photo-cap"><h3>Field Notes — Zine</h3><p data-i18n="cap.6">Graphic design — 32pp</p></figcaption>
+          </article>
+          <article class="photo" data-drag data-category="3d" style="--r:-3.5deg">
+            <span class="tape"></span>
+            <a class="photo-media" href="#"><img src="assets/work/piece-07.svg" alt="Product render of a ceramic object with caustics" loading="lazy" /></a>
+            <figcaption class="photo-cap"><h3>Ceramic Study</h3><p>3D — Blender</p></figcaption>
+          </article>
+          <article class="photo" data-drag data-category="illustration" style="--r:2deg">
+            <span class="tape"></span>
+            <a class="photo-media" href="#"><img src="assets/work/piece-08.svg" alt="Full-bleed cover illustration with layered colour" loading="lazy" /></a>
+            <figcaption class="photo-cap"><h3>Long Way Home</h3><p data-i18n="cap.8">Illustration — Book cover</p></figcaption>
+          </article>
+          <article class="photo" data-drag data-category="graphic" style="--r:-1deg">
+            <span class="tape"></span>
+            <a class="photo-media" href="#"><img src="assets/work/piece-09.svg" alt="Coffee packaging mockups on a neutral surface" loading="lazy" /></a>
+            <figcaption class="photo-cap"><h3>Roast &amp; Co.</h3><p data-i18n="cap.9">Graphic design — Packaging</p></figcaption>
+          </article>
+        </div>
+        <p class="board-hint reveal" data-i18n="board.hint">psst — you can shove these around ✋</p>
+        <p class="gallery-empty" hidden data-i18n="gallery.empty">Nothing here yet — try another filter.</p>
+      </div>
+    </section>
+
+    <div class="tear" aria-hidden="true"></div>
+
+    <!-- ==================== ABOUT ==================== -->
+    <section id="about" class="chapter chapter--ink" data-chapter="dark">
+      <div class="container about-grid">
+        <div class="about-media reveal">
+          <figure class="sticker sticker--solo" data-drag style="--r:-4deg">
+            <span class="tape"></span>
+            <img src="assets/about/portrait.jpg" width="900" height="1125" alt="Portrait of Diogo Nóbrega" loading="lazy" />
+          </figure>
+        </div>
+
+        <div class="about-copy">
+          <header class="chapter-head reveal">
+            <span class="chapter-num">02</span>
+            <h2 class="chapter-title" data-i18n-html="about.title">A bit <em>about me</em></h2>
+          </header>
+          <!-- EDIT ME: real bio -->
+          <p class="about-lead reveal" data-i18n="about.lead">
+            I'm Diogo — I work across 3D, illustration and graphic design,
+            and I like the projects that let all three show up at once.
+          </p>
+          <p class="reveal" data-i18n="about.p1">
+            An identity that needs a rendered hero image. An illustration
+            series with a real type system behind it. I've worked with
+            studios and independent clients on campaigns, editorial,
+            packaging and personal IP.
+          </p>
+          <p class="reveal" data-i18n="about.p2">Craft, clear communication, deadlines without drama.</p>
+
+          <div class="chip-set reveal">
+            <h3 class="chip-head" data-i18n="about.make">I make</h3>
+            <span class="chip" data-i18n="chip.graphic">Graphic Design</span><span class="chip">3D</span>
+            <span class="chip" data-i18n="chip.motion">Motion</span><span class="chip" data-i18n="chip.illustration">Illustration</span>
+            <span class="chip" data-i18n="chip.pos">Point of Sale</span><span class="chip" data-i18n="chip.events">Events</span>
+            <span class="chip">Branding</span><span class="chip" data-i18n="chip.print3d">3D Printing</span>
+            <span class="chip" data-i18n="chip.social">Social Media</span><span class="chip" data-i18n="chip.more">&amp; much more</span>
+          </div>
+          <div class="chip-set reveal">
+            <h3 class="chip-head" data-i18n="about.use">I use</h3>
+            <span class="chip">Adobe CC</span><span class="chip">Blender</span>
+            <span class="chip">Cinema 4D</span><span class="chip">Corona Renderer</span>
+            <span class="chip">Figma</span><span class="chip" data-i18n="chip.ai">AI tools</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="tear" aria-hidden="true"></div>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section id="contact" class="chapter chapter--flame" data-chapter="dark">
+      <div class="container">
+        <header class="chapter-head reveal">
+          <span class="chapter-num">03</span>
+          <h2 class="chapter-title" data-i18n="contact.title">Contact</h2>
+        </header>
+
+        <h2 class="shout reveal" data-i18n-html="contact.shout">Let's make<br /><em>something good</em></h2>
+        <p class="contact-lede reveal" data-i18n="contact.lede">
+          Free for freelance, open to full-time. Email is fastest.
+        </p>
+        <!-- EDIT ME: real email + links -->
+        <a class="mailto reveal" href="mailto:diogo.a.a.nobrega2002@gmail.com" data-magnetic>
+          diogo.a.a.nobrega2002@gmail.com
+        </a>
+
+        <ul class="checklist reveal">
+          <li data-check data-i18n="check.1">Brand identity &amp; systems</li>
+          <li data-check data-i18n="check.2">Editorial &amp; print</li>
+          <li data-check data-i18n="check.3">3D scenes &amp; campaigns</li>
+          <li data-check data-i18n="check.4">Character illustration</li>
+        </ul>
+
+        <ul class="socials reveal">
+          <li><a href="#" class="btn btn--ink" data-magnetic rel="noopener">Instagram ↗</a></li>
+          <li><a href="#" class="btn btn--ink" data-magnetic rel="noopener">ArtStation ↗</a></li>
+          <li><a href="#" class="btn btn--ink" data-magnetic rel="noopener">Behance ↗</a></li>
+          <li><a href="#" class="btn btn--ink" data-magnetic rel="noopener">LinkedIn ↗</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <div class="tear" aria-hidden="true"></div>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer chapter--indigo">
+    <div class="container">
+      <div class="footer-row">
+        <p>© <span id="year">2026</span> <span data-i18n="footer.copy">Diogo Nóbrega. Made from scratch.</span></p>
+        <a href="#top" class="wiggle" data-i18n="footer.top">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/i18n.js" defer></script>
+</body>
+</html>
