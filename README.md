@@ -30,6 +30,7 @@ about.html            portrait + PT/EN bio shown side by side (no toggle)
 aldi.html             project page — credits + PT/EN head, flush image stack
 estoril-open.html     project page — credits + PT/EN head, compare-slider, image stack
 christina.html        project page — credits + PT/EN head, flush image stack
+ai.html other.html    collection pages — will hold many projects (empty for now)
 css/styles.css        tokens → base → header/hero → work grid → marquee →
                        about → project-page helpers → compare-slider
 js/main.js            drag-to-compare slider logic ([data-compare])

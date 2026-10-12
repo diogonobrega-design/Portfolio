@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI · Diogo Nóbrega</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="site-header">
+      <ul class="nav">
+        <li><span class="chev">›</span> <a href="index.html">Portfolio</a></li>
+        <li><span class="chev">›</span> <a href="about.html">About me</a></li>
+        <li><span class="chev">›</span> <a href="assets/Diogo-Nobrega-CV.pdf" target="_blank" rel="noopener">Curriculum vitae</a></li>
+      </ul>
+    </header>
+
+    <main class="project-main">
+      <a class="back-link" href="index.html#work"><span class="chev">‹</span> Back to portfolio</a>
+
+      <div class="collection-head">
+        <h1>AI</h1>
+        <p>Projects and experiments made with AI.</p>
+      </div>
+
+      <!-- EDIT ME: add more clips as another <figure> (portrait 3:4 works best). -->
+      <div class="video-grid">
+        <figure class="work work--video">
+          <video src="assets/ai/belem.mp4#t=0.1" controls playsinline preload="metadata" aria-label="FOOH video — Belém"></video>
+          <span class="work-label" aria-hidden="true"><span class="chev">›</span> FOOH Videos</span>
+        </figure>
+        <figure class="work work--video">
+          <video src="assets/ai/eletrico.mp4#t=0.1" controls playsinline preload="metadata" aria-label="FOOH video — Elétrico"></video>
+          <span class="work-label" aria-hidden="true"><span class="chev">›</span> FOOH Videos</span>
+        </figure>
+        <figure class="work work--video">
+          <video src="assets/ai/teleferico.mp4#t=0.1" controls playsinline preload="metadata" aria-label="FOOH video — Teleférico"></video>
+          <span class="work-label" aria-hidden="true"><span class="chev">›</span> FOOH Videos</span>
+        </figure>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <span>© <span id="year"></span> Diogo Nóbrega</span>
+      <a href="#top">↑ Top</a>
+    </footer>
+  </div>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

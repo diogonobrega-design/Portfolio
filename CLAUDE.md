@@ -9,7 +9,7 @@ and full-time work.
 - Plain **HTML + CSS + JS**. No framework, no build step, **no dependencies**
   (no GSAP, no npm — the machine has no Node). Keep it that way.
 - Pages: `index.html` · `about.html` · `estoril-open.html` · `aldi.html` ·
-  `christina.html` · `css/styles.css` · `js/main.js`.
+  `christina.html` · `ai.html` · `other.html` · `css/styles.css` · `js/main.js`.
 - Fonts (Google Fonts): **Anton** (heavy condensed display — the big
   headlines) and **Space Mono** (nav, labels, credits, body copy — everything
   else).
@@ -34,12 +34,15 @@ bottom of this file). Keep this identity:
 - **Type.** Anton, all-caps, for every `h1` (hero name, project titles, about
   heading). Space Mono for absolutely everything else — nav, tagline, tile
   labels, captions, credits, body paragraphs. No third font.
-- **Work grid is a masonry, not a fixed grid.** `.grid` uses CSS
-  `column-count` (3 / 2 / 1 by breakpoint), and `.tile` has **no border and no
-  background** — images keep their own natural aspect ratio and sit directly
-  on the page background, so there's no visible card edge around them. Don't
-  reintroduce `border`/`background` on `.tile`; that was a specific complaint
-  fixed once already.
+- **Work grid is an explicit CSS grid, not a masonry.** `.grid` is 3 columns
+  on desktop with named areas: ALDI top-left, Estoril Open (tall, spans both
+  rows) in the middle, Christina top-right, **AI** under ALDI and **Other**
+  under Christina — placed by `:nth-child` inside `@media (min-width: 861px)`,
+  so **the order of the five tiles in `index.html` matters** (aldi, estoril,
+  christina, ai, other). ≤860px it's 2 columns, ≤560px 1 column, in DOM order.
+  Image tiles keep their natural aspect ratio; `.tile` has **no border and no
+  background** — images sit directly on the page background with no visible
+  card edge. Don't reintroduce `border`/`background` on `.tile`.
 - **Brand marquee** (`.brands`): two identical `.brand-track` blocks looping
   via a CSS `translateX` keyframe — keep both tracks identical for a seamless
   loop, same technique as the old site.
@@ -84,6 +87,25 @@ Change tokens only — never hard-code a colour elsewhere.
   approximated black. A flattened JPG reliably shows a visible seam/border
   against the page background; WebP-with-alpha both fixes that and compresses
   better than the equivalent PNG. See `assets/estoril/recap-*.webp`.
+- **Collection pages** (`ai.html`, `other.html`) — not case studies but
+  containers holding many pieces of work. They show on the home grid as
+  typographic `.tile--cat` tiles (big Anton word, no cover image) and open a
+  page with `.collection-head` (title + one-line blurb) followed by the work:
+  - `ai.html`: `.video-grid` of `<figure class="work work--video">`s, each a
+    portrait 3:4 `<video controls playsinline preload="metadata">` (src ends
+    `#t=0.1` so the first frame shows). Clips live in `assets/ai/` (~15 MB
+    each; no ffmpeg on this machine, so they're uncompressed).
+  - `other.html`: a `.project-shots` stack of `<figure class="work">`s
+    (image + label) in `assets/other/` as WebP. Add `is-tall` to the figure
+    for a portrait image so it isn't stretched to full width. Order on the
+    page is deliberate (the tall email image is last).
+  - **Hover labels:** every `.work` has a `<span class="work-label"
+    aria-hidden="true">` that fades in over the image on hover (dim overlay +
+    centred text; on videos it's a top bar so the controls stay usable; on
+    touch screens it's a small always-visible tag). Put the real description
+    in the image `alt`. Labels in use: "Posts Leads Sical", "Store Decoration
+    Adidas", "KV Lion", "Nestlé Leite Condensado POS", "CRM's Decathlon",
+    "FOOH Videos".
 - To add a project: copy `christina.html`, drop web-sized images in a new
   `assets/<slug>/`, and point a new tile in `index.html`'s `.grid` at the file.
 - About page (`about.html`): portrait + PT/EN `.lang-block`s shown

@@ -129,14 +129,27 @@ a { color: inherit; }
 /* ---------- work grid ---------- */
 .grid-section { padding: 1rem 0 clamp(3rem, 7vw, 5rem); }
 .grid {
-  column-count: 3;
-  column-gap: clamp(1rem, 2vw, 1.8rem);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 2vw, 1.8rem);
+  align-items: start;
+}
+/* desktop: Estoril (tall) in the middle, AI under ALDI, Other under Christina */
+@media (min-width: 861px) {
+  .grid {
+    grid-template-areas:
+      "a e c"
+      "ai e o";
+  }
+  .grid > :nth-child(1) { grid-area: a; }
+  .grid > :nth-child(2) { grid-area: e; }
+  .grid > :nth-child(3) { grid-area: c; }
+  .grid > :nth-child(4) { grid-area: ai; }
+  .grid > :nth-child(5) { grid-area: o; }
 }
 .tile {
   position: relative;
   display: block;
-  break-inside: avoid;
-  margin-bottom: clamp(1rem, 2vw, 1.8rem);
   border-radius: var(--radius);
   overflow: hidden;
   background: var(--bg);
@@ -174,11 +187,44 @@ a.tile:hover img, a.tile:focus-visible img { transform: scale(1.03); }
 a.tile:hover .tile-label, a.tile:focus-visible .tile-label { opacity: 1; transform: translateY(0); }
 .tile-label .chev { color: var(--accent); }
 
+/* -- category tiles (AI / OTHER): typographic, no cover image needed -- */
+.tile--cat {
+  align-self: stretch;
+  min-height: clamp(9rem, 16vw, 13rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  text-decoration: none;
+  background-image: radial-gradient(var(--line) 1px, transparent 1px);
+  background-size: 14px 14px;
+  background-position: 10px 10px;
+  transition: background-color 0.25s ease;
+}
+.tile--cat:hover, .tile--cat:focus-visible { background-color: var(--bg-2); }
+.tile-cat-word {
+  font-family: "Anton", "Arial Narrow", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: clamp(3.2rem, 8vw, 6rem);
+  line-height: 0.95;
+  margin-top: auto;
+}
+.tile-cat-note {
+  margin: 0.8rem 0 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.tile-cat-note .chev { color: var(--accent); }
+.tile--cat:hover .tile-cat-word, .tile--cat:focus-visible .tile-cat-word { color: var(--accent); }
+
 @media (max-width: 860px) {
-  .grid { column-count: 2; }
+  .grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 560px) {
-  .grid { column-count: 1; }
+  .grid { grid-template-columns: 1fr; }
 }
 
 /* ---------- brand marquee ---------- */
@@ -292,7 +338,26 @@ a.tile:hover .tile-label, a.tile:focus-visible .tile-label { opacity: 1; transfo
 .back-link .chev { color: var(--accent); }
 .back-link:hover, .back-link:focus-visible { color: var(--accent); }
 
-.project-head h1 {
+/* -- collection pages (ai.html / other.html): a title, a blurb, then many projects -- */
+.collection-head { margin-bottom: clamp(2rem, 5vw, 3rem); }
+.collection-head p { margin: 0; max-width: 46em; color: var(--ink-soft); font-size: 0.95rem; }
+.collection-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 2rem;
+}
+.collection-empty .chev { color: var(--accent); margin-right: 0.5em; }
+
+.project-head h1, .collection-head h1 {
   font-family: "Anton", "Arial Narrow", sans-serif;
   font-weight: 400;
   text-transform: uppercase;
@@ -301,6 +366,7 @@ a.tile:hover .tile-label, a.tile:focus-visible .tile-label { opacity: 1; transfo
   margin: 0 0 1.4rem;
   max-width: 16em;
 }
+.collection-head h1 { margin-bottom: 0.6rem; }
 
 /* -- project head: credits rail + bilingual PT/EN copy (all project pages) -- */
 .project-columns {
@@ -341,6 +407,66 @@ a.tile:hover .tile-label, a.tile:focus-visible .tile-label { opacity: 1; transfo
 /* -- flush variant: images butt up against each other, no radius (for stripe-style artwork) -- */
 .project-shots--flush { gap: 0; }
 .project-shots--flush img { border-radius: 0; }
+
+/* -- labelled work (other.html / ai.html): hover shows a caption overlay -- */
+.work { position: relative; margin: 0; overflow: hidden; border-radius: var(--radius); }
+.work img, .work video { display: block; }
+.work-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(10, 10, 10, 0.62);
+  color: var(--ink);
+  font-size: clamp(0.85rem, 1.6vw, 1.15rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+.work-label .chev { color: var(--accent); margin-right: 0.5em; }
+.work:hover .work-label { opacity: 1; }
+/* videos: label sits in a top bar so the player controls stay usable */
+.work--video .work-label {
+  inset: 0 0 auto 0;
+  justify-content: flex-start;
+  padding: 0.8rem 1rem 1.6rem;
+  background: linear-gradient(rgba(10, 10, 10, 0.75), transparent);
+  font-size: 0.78rem;
+}
+/* touch screens have no hover: show the caption as a small tag instead */
+@media (hover: none) {
+  .work-label { inset: auto auto 0.7rem 0.7rem; padding: 0.35rem 0.7rem; background: rgba(10, 10, 10, 0.75); border-radius: 6px; font-size: 0.7rem; opacity: 1; }
+  .work--video .work-label { inset: 0.7rem auto auto 0.7rem; background: rgba(10, 10, 10, 0.75); padding: 0.35rem 0.7rem; }
+}
+
+/* -- portrait work inside a stack: don't blow it up to full width -- */
+.project-shots .is-tall { width: 56%; align-self: center; }
+@media (max-width: 720px) { .project-shots .is-tall { width: 100%; } }
+
+/* -- video grid (ai.html): portrait 3:4 clips, 3 / 2 / 1 columns -- */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 2vw, 1.8rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.video-grid video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: var(--radius);
+  background: var(--bg-2);
+}
+@media (max-width: 860px) { .video-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .video-grid { grid-template-columns: 1fr; } }
 
 /* -- drag-to-compare slider (3D render <-> built) -- */
 .pm-compare-slider {

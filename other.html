@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Other · Diogo Nóbrega</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="site-header">
+      <ul class="nav">
+        <li><span class="chev">›</span> <a href="index.html">Portfolio</a></li>
+        <li><span class="chev">›</span> <a href="about.html">About me</a></li>
+        <li><span class="chev">›</span> <a href="assets/Diogo-Nobrega-CV.pdf" target="_blank" rel="noopener">Curriculum vitae</a></li>
+      </ul>
+    </header>
+
+    <main class="project-main">
+      <a class="back-link" href="index.html#work"><span class="chev">‹</span> Back to portfolio</a>
+
+      <div class="collection-head">
+        <h1>Other</h1>
+        <p>Social media, CRM and other work that doesn't fit anywhere else.</p>
+      </div>
+
+      <!-- EDIT ME: add more work as another <figure class="work"> (img + .work-label) in the stack below. -->
+      <div class="project-shots">
+        <figure class="work">
+          <img src="assets/other/sical-instagram.webp" alt="Sical — Instagram posts shown on phone mockups" loading="lazy">
+          <span class="work-label" aria-hidden="true"><span class="chev">›</span> Posts Leads Sical</span>
+        </figure>
+        <figure class="work">
+          <img src="assets/other/adidas-store.webp" alt="Adidas — store wall and column graphics, 3D render" loading="lazy">
+          <span class="work-label" aria-hidden="true"><span class="chev">›</span> Store Decoration Adidas</span>
+        </figure>
+        <figure class="work">
+          <img src="assets/other/lion-poster.webp" alt="Nestlé Lion — Mix-in topping poster" loading="lazy">
+          <span class="work-label" aria-hidden="true"><span class="chev">›</span> KV Lion</span>
+        </figure>
+        <figure class="work">
+          <img src="assets/other/nestle-pos.webp" alt="Nestlé Leite Condensado — Easter and Christmas point-of-sale displays, 3D renders" loading="lazy">
+          <span class="work-label" aria-hidden="true"><span class="chev">›</span> Nestlé Leite Condensado POS</span>
+        </figure>
+        <figure class="work is-tall">
+          <img src="assets/other/decathlon-emails.webp" alt="Decathlon — three email newsletters (Paris-Roubaix, summer, UEFA balls)" loading="lazy">
+          <span class="work-label" aria-hidden="true"><span class="chev">›</span> CRM's Decathlon</span>
+        </figure>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <span>© <span id="year"></span> Diogo Nóbrega</span>
+      <a href="#top">↑ Top</a>
+    </footer>
+  </div>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
